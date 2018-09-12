@@ -92,6 +92,8 @@ propertySchema.index({
  * METHODS
  */
 propertySchema.pre('findOneAndUpdate', async function(next) {
+
+  //TODO implement race conditon with setTimeout to handle google api timeout with proper error msg sent to user
   if(process.env.GOOGLE_API_DISABLED !== "true"){
     const coordinates = await getCoordinatesFromAddress(this._update.address);
     this._update.location = {
