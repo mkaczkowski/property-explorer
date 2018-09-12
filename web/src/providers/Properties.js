@@ -91,6 +91,8 @@ class PropertiesProvider extends React.PureComponent<PropertiesProviderProps, Pr
       this.refreshUpdatedProperty(updatedProperty);
       onSuccess();
     } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error('err:', err);
       onError(err);
     }
   };

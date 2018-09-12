@@ -29,19 +29,6 @@ header.menu {
   & > nav {
     margin-left: auto;
   }
-  & > h2 {
-    margin: 0 2rem;
-    font-size: 1.4em;
-    line-height: 1.7em;
-    @media (--phone) {
-      font-size: 1em;
-      line-height: 1.2em;
-    }
-    @media (--tablet) {
-      font-size: 1.2em;
-      line-height: 1.8em;
-    }
-  }
   & > * {
     flex: 1;
   }

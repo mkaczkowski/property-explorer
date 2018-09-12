@@ -55,13 +55,12 @@ class Header extends React.PureComponent<HeaderProps, HeaderState> {
 
     const navigationButtons = [
       { label: 'Show all', action: showAll },
-      { label: 'Show in area', action: showRestricted },
+      { label: 'Within area', action: showRestricted },
     ];
 
     return (
       <header styleName="menu" className={className}>
         <div styleName="inner-wrapper">
-          <h2>Property Explorer</h2>
           <ButtonBar buttons={navigationButtons} />
         </div>
       </header>

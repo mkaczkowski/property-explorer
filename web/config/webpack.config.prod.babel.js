@@ -18,12 +18,13 @@ import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin';
 import getClientEnvironment from './env';
 import getMetaData from './metadata';
 import postcssConfig from './postcss.config';
-import ScriptExtHtmlWebpackPlugin from "script-ext-html-webpack-plugin";
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 
 const env = getClientEnvironment('production', '/');
 const metadata = getMetaData(env.raw);
 
 const isPWA = env.raw.PWA_ENABLED !== 'false';
+
 const shouldUseLinters = env.raw.LINTERS_DISABLED !== 'true';
 
 export default {
@@ -141,10 +142,10 @@ export default {
           },
           {
             test: /\.(jpe?g|jpg|gif|png|svg|ico|woff|woff2|eot|ttf|webp)$/,
-            loader: 'file-loader',
+            loader: 'url-loader',
             options: {
+              limit: 8192,
               name: '[name].[ext]',
-              emitFile: true,
             },
           },
         ],
@@ -160,14 +161,14 @@ export default {
         files: '**/*.css',
         emitErrors: true,
       }),
-    new LodashModuleReplacementPlugin({ paths: true }),
+    new LodashModuleReplacementPlugin({ paths: true, shorthands: true }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css',
       chunkFilename: '[name].[contenthash:8].chunk.css',
     }),
     isPWA &&
       new FaviconsWebpackPlugin({
-        logo: './src/assets/favicon.png',
+        logo: path.resolve('src/assets/favicon.png'),
         prefix: '',
         background: '#ffffff',
         emitStats: false,
@@ -222,10 +223,12 @@ export default {
       },
     }),
     new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: 'defer'
+      defaultAttribute: 'defer',
     }),
     new PrerenderSPAPlugin({
       staticDir: path.resolve('dist'),
+      indexPath: path.resolve('dist/index.html'),
+      outputDir: path.resolve('dist'),
       // Required - Routes to render.
       routes: ['/'],
       minify: {
@@ -236,7 +239,7 @@ export default {
         sortAttributes: true,
       },
       renderer: new PrerenderSPAPlugin.PuppeteerRenderer({
-        skipThirdPartyRequests: true,
+        skipThirdPartyRequests: false,
         headless: true, // Display the browser window when rendering. Useful for debugging.
       }),
     }),
