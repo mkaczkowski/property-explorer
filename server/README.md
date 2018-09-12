@@ -1,25 +1,19 @@
-# 🏠 property-explorer-api
+# 🌏 property-explorer-api
 
 Property Explorer REST API
 
 ```bash
-GET /properties
-GET /properties?longitude=12.32&latitude=-23.12
-PATCH /properties/:id
-```
+//get all properties
+GET /api/properties
 
-## 🔧 Installation
+//get all properties within the radius 20km from the given coordinates 
+GET /api/properties?latitude=51.5073835&longitude=-0.1277801
 
-Clone repository to your local workspace:
-```bash
-git clone https://github.com/mkaczkowski/property-explorer-api.git
-```
+//get property by id
+GET /api/properties/:id
 
-Install project dependencies using npm or yarn:
-
-```bash
-cd node-mongo-starter
-npm install or yarn
+//update property
+PATCH /api/properties/:id
 ```
 
 ## 🎮 Development
@@ -44,6 +38,12 @@ Production start of the service:
 
 ```bash
 npm run start or yarn start
+```
+
+Open in your browser:
+
+```bash
+http://localhost:3001
 ```
 
 ## 📜 License

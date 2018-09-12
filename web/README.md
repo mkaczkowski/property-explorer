@@ -1,6 +1,6 @@
-# ⚛ modern-react-starter-pwa
+# ⚛ property-explorer-web
 
-Cutting edge React PWA boilerplate for everyone
+Property Explorer Web Application
 
 ## 🕹 Features
 * [React (v16.4.2)](https://reactjs.org) - JavaScript library for building user interfaces
@@ -11,28 +11,6 @@ Cutting edge React PWA boilerplate for everyone
 * [Jest (v.23)](https://jestjs.io) - Delightful JavaScript testing library
 * [React Hot Loader (v4)](https://github.com/gaearon/react-hot-loader) - Tweak React components in real time
 * Linters (ESLint, Stylelint) + [Prettier](https://prettier.io) - Tweak React components in real time ⚛️⚡️
-* [Docz](https://www.docz.site/) - Document your code with mdx
-
-- flow-runtime
-- dotenv
-- bundle analyzer
-- pwa
-- favicon generator
-- modernizr
-
-## 🔧 Installation
-
-Clone repository to your local workspace:
-```bash
-git clone https://github.com/mkaczkowski/modern-react-starter.git
-```
-
-Install project dependencies using npm or yarn:
-
-```bash
-cd modern-react-starter
-yarn or npm install
-```
 
 ## 🎮 Development
 
@@ -48,7 +26,7 @@ Open in your browser:
 http://localhost:3000
 ```
 
-## 🙏 Testing
+## ✅ Testing
 
 Validate your unit tests
 
