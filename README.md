@@ -2,7 +2,7 @@
 
 Property Explorer
 
-Live application is available [here](https://reactjs.org)
+Live application is available [here](https://property-explorer-api-cpfcnfxxqo.now.sh)
 
 ## 🔧 Installation
 
