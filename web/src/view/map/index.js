@@ -5,6 +5,6 @@ import Map from '../../components/complex/map';
 //prettier-ignore
 export default (props) => (
   <PropertiesContext.Consumer>
-    { context => <Map {...context} {...props}/> }
+    { context => <Map {...context} {...props} /> }
   </PropertiesContext.Consumer>
 );

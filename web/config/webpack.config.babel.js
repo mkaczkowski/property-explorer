@@ -5,6 +5,7 @@ import HTMLWebpackPlugin from 'html-webpack-plugin';
 import noopServiceWorkerMiddleware from 'react-dev-utils/noopServiceWorkerMiddleware';
 import PostcssPresetEnv from 'postcss-preset-env';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import getClientEnvironment from './env';
 import postcssConfig from './postcss.config';
 import getMetaData from './metadata';
@@ -148,6 +149,9 @@ export default {
       title: metadata.name,
       google_maps_key: process.env.GOOGLE_API_KEY,
     }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer'
+    })
   ].filter(plugin => plugin !== false),
   devServer: {
     contentBase: '.tmp',

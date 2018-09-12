@@ -18,6 +18,7 @@ import HtmlCriticalWebpackPlugin from 'html-critical-webpack-plugin';
 import getClientEnvironment from './env';
 import getMetaData from './metadata';
 import postcssConfig from './postcss.config';
+import ScriptExtHtmlWebpackPlugin from "script-ext-html-webpack-plugin";
 
 const env = getClientEnvironment('production', '/');
 const metadata = getMetaData(env.raw);
@@ -219,6 +220,9 @@ export default {
         minifyCSS: true,
         minifyURLs: true,
       },
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer'
     }),
     new PrerenderSPAPlugin({
       staticDir: path.resolve('dist'),
