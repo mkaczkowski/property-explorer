@@ -1,0 +1,56 @@
+label {
+  font-size: 1.1em;
+  display: inline-block;
+  box-sizing : border-box;
+  & + input {
+    margin-top: 0.5rem;
+  }
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1em;
+  background-color: transparent;
+  border: 1px solid #9a9a9a;
+  border-radius: 0.2em;
+  outline: none;
+  box-sizing : border-box;
+
+  &::placeholder {
+    color: currentcolor;
+    opacity: 0.5;
+  }
+}
+
+.required {
+  color: red;
+}
+
+.field {
+  font-size: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1;
+
+  & label {
+    padding-bottom: 0.5em;
+  }
+
+  & > *:not(label):not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+}
+
+.box {
+  padding: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+}
+
+form {
+  & > div {
+    margin-bottom: 0.8rem;
+  }
+}

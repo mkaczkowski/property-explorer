@@ -1,0 +1,25 @@
+{
+  "name": "property-explorer",
+  "version": "1.0.0",
+  "author": "Mariusz Kaczkowski",
+  "private": true,
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "scripts": {
+    "postinstall": "run-s install:server install:web",
+    "install:server": "yarn --cwd server",
+    "install:web": "yarn --cwd web",
+    "start": "cd server && yarn start",
+    "start:dev": "run-p start:dev:server start:dev:web",
+    "start:dev:server": "cd server && yarn start:dev",
+    "start:dev:web": "cd web && yarn start",
+    "build": "cd web && yarn build && cp -r dist/* ../server/public/",
+    "test": "run-p test:server test:web",
+    "test:server": "cd server && yarn test",
+    "test:web": "cd web && yarn test"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.3"
+  }
+}
