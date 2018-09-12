@@ -12,7 +12,6 @@ import type { PropertyItemProps } from '../PropertyItem';
 import type { Property } from '../../../../model/Property';
 
 import './PropertyItemEditable.css';
-import { integer } from '../../../../util/validation/validation';
 
 type InputProps = {
   title: string,

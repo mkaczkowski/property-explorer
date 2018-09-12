@@ -10,7 +10,7 @@ import Button from '../../common/button/Button';
 
 import type { PropertiesContextProps } from '../../../providers/Properties';
 
-import {} from './ActionButtons.css';
+import './ActionButtons.css';
 
 export type ActionButtonsType = PropertiesContextProps & {
   id?: number,
@@ -22,9 +22,9 @@ export type ActionButtonsType = PropertiesContextProps & {
 
 const ActionButtons = (props: ActionButtonsType) => (
   <div styleName="wrapper">
-      <Button data-tip="Edit" onClick={props.onShowEdit}>
-        <Icon icon={edit} size={48}/>
-      </Button>
+    <Button data-tip="Edit" onClick={props.onShowEdit}>
+      <Icon icon={edit} size={48} />
+    </Button>
     <ReactTooltip effect="solid" delayShow={300} />
   </div>
 );

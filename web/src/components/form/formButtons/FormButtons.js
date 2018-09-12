@@ -2,7 +2,7 @@
 import * as React from 'react';
 import Button from '../../common/button/Button';
 import type { ActionButtonsType } from '../../complex/actionButtons/ActionButtons';
-import {} from './FormButtons.css';
+import './FormButtons.css';
 
 export type FormButtonsType = ActionButtonsType & {
   isSubmitting: boolean,

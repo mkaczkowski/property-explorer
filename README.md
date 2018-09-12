@@ -2,7 +2,13 @@
 
 Property Explorer
 
+Live application is available [here](https://reactjs.org)
+
 ## 🔧 Installation
+
+Application was created and tested with yarn@1.9.4 and node@v8.10.0
+
+Please install it globally or upgrade if it's outdated.
 
 Clone repository to your local workspace:
 ```bash

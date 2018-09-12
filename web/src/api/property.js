@@ -13,12 +13,12 @@ export type GetPropertiesAPI = {
   longitude?: string,
 };
 
-export async function getProperties({ latitude, longitude }: GetPropertiesAPI = {}): Object {
+export async function getProperties(data: GetPropertiesAPI = {}): Object {
   const url = `${process.env.API_URL}/properties`;
 
   const query: any = {
-    latitude,
-    longitude,
+    latitude: data.latitude,
+    longitude: data.longitude,
   };
 
   const options = {

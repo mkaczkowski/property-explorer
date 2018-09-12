@@ -61,7 +61,7 @@ class PropertiesProvider extends React.PureComponent<PropertiesProviderProps, Pr
   fetch = async () => {
     const { isRestricted } = this.state;
     this.setState(() => ({ properties: [], isLoading: true }));
-    const query: any = isRestricted ? this.getCoordinates() : undefined;
+    const query: GetPropertiesAPI = isRestricted ? this.getCoordinates() : {};
     const properties = await PropertyApi.getProperties(query);
     this.setState(() => ({ properties, isLoading: false }));
   };
@@ -70,7 +70,7 @@ class PropertiesProvider extends React.PureComponent<PropertiesProviderProps, Pr
 
   fetchByCoordinates = () => this.setState(() => ({ isRestricted: true }));
 
-  getCoordinates = () => {
+  getCoordinates = (): GetPropertiesAPI => {
     // read coordinates from env variables
     const coordinatesString = process.env.RESTRICT_COORDINATES;
     const [latitude, longitude] = coordinatesString ? coordinatesString.split(' ') : [];

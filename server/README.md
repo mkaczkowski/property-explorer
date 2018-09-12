@@ -16,6 +16,11 @@ GET /api/properties/:id
 PATCH /api/properties/:id
 ```
 
+❗IMPORTANT❗
+
+Currently Google API is disabled due to timeout issues with developer key and queue buffer. (should work fine with premium account)
+To enable it change flag GOOGLE_API_DISABLED to false in ./variables.env
+
 ## 🎮 Development
 
 Start developing your own app:

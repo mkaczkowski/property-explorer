@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {} from './Error.css';
+import './Error.css';
 
 const Error = ({ touched, errors, field }) =>
   (touched[field] && errors[field] &&
